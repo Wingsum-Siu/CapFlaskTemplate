@@ -59,10 +59,13 @@ class ProfileForm(FlaskForm):
     lname = StringField('Last Name', validators=[DataRequired()]) 
     image = FileField("Image") 
     submit = SubmitField('Post')
+    role = SelectField('Role',choices=[("Teacher","Teacher"),("Student","Student")])
+    favcolor = SelectField('Favorite Color',choices=[("Red","Red"),("Orange","Orange"),("Yellow","Yellow"),("Green","Green"),("Blue","Blue"),("Purple","Purple"),("Black","Black"),("White","White")])
 
 class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
     content = TextAreaField('Post', validators=[DataRequired()])
+    userfeeling = SelectField('How are you feeling today?',choices=[("Great","Great"),("Alright","Alright"),("A little down","A little down"),("Sad","Sad"),("Angry","Angry"),("Excited","Excited")])
     submit = SubmitField('Post')
 
 class CommentForm(FlaskForm):

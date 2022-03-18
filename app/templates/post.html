@@ -18,7 +18,8 @@
         </a>
     {% endif %}
 
-    <h1 class="display-5">{{post.subject}}</h1>
+    <h1 class="display-5">Subject: {{post.subject}}</h1>
+    <p class="display-5">User feeling: {{post.userfeeling}}</p>
     <p class="fs-3 text-break">
         <img width="120" class="img-thumbnail float-start me-2" src="data:image;base64,{{base64encode(post.author.image.read())}}">
         {{post.content}}

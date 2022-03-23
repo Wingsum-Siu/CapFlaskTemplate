@@ -2,7 +2,45 @@
 
 {% block body %}
 
-<h1>Social Anxiety App</h1>
-<img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/0c910b73418495.5c08acdc3414a.jpg" width="500" alt="">
-
+<h1 id="title">Social Anxiety App</h1>
+<br>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://johnstownheights.com/wp-content/uploads/2021/06/More-Than-Introverted-A-Look-at-Social-Anxiety-Disorder.jpg" class="d-block mx-auto"  width=600px alt="uh oh">
+      </div>
+      <div class="carousel-item">
+        <img src="https://cdn1.stayprepared.sg/wp-content/uploads/sites/13/2020/07/social-anxiety-01.jpg" class="d-block mx-auto" width=800px alt="uh oh">
+      </div>
+      <div class="carousel-item">
+        <img src="https://iiif.wellcomecollection.org/image/B0009838/full/full/0/default.jpg" class="d-block mx-auto" width=800px alt="uh oh">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.wellmark.com/-/media/sites/blue-magazine/2020-content-marketing/september/social-anxiety-covid.png?sc_lang=en" class="d-block mx-auto" width=800px alt="uh oh">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<br><hr>
+<h4>This site includes</h4>
+<ul>
+    <li><p>A short visual novel style interactive game (tbd)</p></li>
+    <li><p>A form to connect with others</p></li>
+    <li><p>Quick information (from research)</p></li>
+    <li><p>An "About Me" page</p></li>
+</ul>
 {% endblock %}

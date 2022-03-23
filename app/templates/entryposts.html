@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-4">
+        <h1 class="display-1">All Entries</h1>
+    </div>
+    <div class="col">
+        <a href="/entry/new" class="btn btn-primary btn-sm mt-5" role="button">New Entry</a>
+    </div>
+</div>
+
+{% if entrys %}
+    {% for entry in entrys %}
+        <div class="row border-bottom">
+            <div class="col-2">
+                {% if loop.index == 1 %}
+                <h3 class="display-5">Date</h3>
+                {% endif %}
+                <a href="/entry/{{entry.id}}">
+                    {{moment(entryform.createdate).calendar()}}
+                    {{entryform.createdate}}
+                </a>
+            </div>
+            <div class="col-2">
+                {% if loop.index == 1 %}
+                <h3 class="display-5">Entry</h3>
+                {% endif %}
+                {{entryform.author.username}}
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <h1>No Posts</h1>
+{% endif %}
+
+{% endblock %}

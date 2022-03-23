@@ -1,0 +1,24 @@
+<!-- this is a generic form page.  Best way to make a new form page is to 
+copy this one and then edit it. -->
+
+{% extends "base.html" %}
+
+{% block body %}
+<h1>Journal Form</h1>
+
+<form method=post>
+    {{ entryform.hidden_tag() }}
+    <p>
+        {{ entryform.entry.label }} <br>
+        {{ entryform.entry(cols=64, rows=10) }}
+        <!--List the errors for this field-->
+        {% for error in entryform.entry.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{entryform.submit()}}
+    </p>
+</form>
+        
+{% endblock %}

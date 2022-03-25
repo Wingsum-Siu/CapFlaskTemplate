@@ -19,15 +19,15 @@
                 <h3 class="display-5">Date</h3>
                 {% endif %}
                 <a href="/entry/{{entry.id}}">
-                    {{moment(entryform.createdate).calendar()}}
-                    {{entryform.createdate}}
+                    {{moment(entry.createdate).calendar()}}
+                    {{entry.createdate}}
                 </a>
             </div>
             <div class="col-2">
                 {% if loop.index == 1 %}
                 <h3 class="display-5">Entry</h3>
                 {% endif %}
-                {{entryform.author.username}}
+                {{entry.author.username}}
             </div>
         </div>
     {% endfor %}

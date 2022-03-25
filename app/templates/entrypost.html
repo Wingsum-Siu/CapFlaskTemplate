@@ -18,12 +18,11 @@
         </a>
     {% endif %}
 
-    <p class="display-5">Entry: {{entryform.entry}}</p>
     <p class="fs-3 text-break">
         {% if entry.author.image %}
             <img width="120" class="img-thumbnail float-start me-2" src="data:image;base64,{{base64encode(post.author.image.read())}}">
         {% endif %}
-            {{entryform.entry}}
+            {{entry.entrycontent}}
     </p>
     
 {% else %}

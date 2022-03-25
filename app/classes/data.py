@@ -72,7 +72,7 @@ class Comment(Document):
 
 class Entry(Document):
     author = ReferenceField('User',reverse_delete_rule=CASCADE) 
-    entry = StringField()
+    entrycontent = StringField()
     createdate = DateTimeField(default=dt.datetime.utcnow)
     modifydate = DateTimeField()
 

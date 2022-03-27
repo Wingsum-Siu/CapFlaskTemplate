@@ -6,8 +6,9 @@
     /* font-family: 'Roboto Mono', monospace; */
     font-family: 'Staatliches', cursive;
     color: black;
-    background: rgb(104, 173, 170);
+    /* background: rgb(104, 173, 170); */
     font-size: 80px;
+    text-shadow: 3px 3px #8398d3;
     
 }
 
@@ -15,9 +16,30 @@
     margin-top: 20px;
 }
 
-#title{
+#center{
     text-align: center;
-    background: rgb(104, 173, 170);
-    font-family: 'Staatliches', cursive;
-    font-size: 100px;
 }
+
+#indextable{
+    background-color: rgb(234, 242, 253);
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
+    text-shadow: 1px 1px #8398d3;
+}
+
+#profiledata{
+    font-size: 25px;
+}
+
+.navbartext{
+    font-family: 'Staatliches', cursive;
+    color: black;
+    font-size: 18px;
+    text-shadow: 1px 1px #5570bb;
+}
+

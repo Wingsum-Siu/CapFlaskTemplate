@@ -2,6 +2,7 @@
 # and users fill them out.  Each form is an instance of a class. Forms are managed by the 
 # Flask-WTForms library.
 
+from email.mime import image
 from flask.app import Flask
 from flask import flash
 from flask_wtf import FlaskForm
@@ -71,5 +72,6 @@ class CommentForm(FlaskForm):
     submit = SubmitField('Comment')
 
 class EntryForm(FlaskForm):
-    entry = content = TextAreaField('Entry', validators=[DataRequired()])
-    submit = SubmitField('Entry')
+    adjective = StringField('Adjective (to describe yourself)', validators=[DataRequired()])
+    entrycontent = TextAreaField('Entry', validators=[DataRequired()])
+    submit = SubmitField('Submit')

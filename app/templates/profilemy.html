@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1 class="display-1">
+<h1 class="header1">
     My Profile
     <a href="/myprofile/edit">
         <img width="40" src="/static/edit.png">
@@ -17,7 +17,7 @@
             <img class="img-thumbnail" width = "100" src="/static/bdog.jpg">
         {% endif %} 
     </div>
-    <div class="col display-5">
+    <div class="col-5" id="profiledata">
         {% if current_user.fname and current_user.lname %}
             Real Name: {{current_user.fname}}  {{current_user.lname}} <br>
         {% endif %}

@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-4">
-        <h1 class="display-1">All Posts</h1>
+        <h1 class="header1">All Posts</h1>
     </div>
     <div class="col">
         <a href="/post/new" class="btn btn-primary btn-sm mt-5" role="button">New Post</a>
@@ -20,7 +20,6 @@
                 {% endif %}
                 <a href="/post/{{post.id}}">
                     {{moment(post.createdate).calendar()}}
-                    {{post.createdate}}
                 </a>
             </div>
             <div class="col-2">

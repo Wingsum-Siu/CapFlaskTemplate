@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="container">
-        <h1>Login</h1>
+        <h1 class="header1">Login</h1>
         {% for field in form.errors %}
             {% for error in form.errors[field] %}
                 <div class="alert alert-error">
@@ -16,7 +16,7 @@
             {{ form.hidden_tag() }}
             <table class="table">
             <tr><th>Username</th><th>{{form.username}}</th></tr>
-            <tr><th>password</th><th>{{form.password}}</th></tr>
+            <tr><th>Password</th><th>{{form.password}}</th></tr>
             <tr><th>Remember Me?</th><th>{{form.remember_me}}</th></tr>
             <tr><td colspan="2">{{form.submit()}}</td></tr>
         </table>

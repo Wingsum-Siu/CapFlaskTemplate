@@ -47,6 +47,8 @@ def entryNew():
     if entryform.validate_on_submit():
         newEntry = Entry(
             entrycontent = entryform.entrycontent.data,
+            adjective = entryform.adjective.data,
+            author = current_user.id,
             modifydate = dt.datetime.utcnow 
         )
         newEntry.save()
@@ -66,10 +68,12 @@ def entryEdit(entryID):
     if entryform.validate_on_submit():
         editEntry.update(
             entrycontent = entryform.entrycontent.data,
+            adjective = entryform.adjective.data,
             modifydate = dt.datetime.utcnow 
         )
         return redirect(url_for('entry',entryID=entryID))
 
+    entryform.adjective.data = editEntry.adjective
     entryform.entrycontent.data = editEntry.entrycontent
 
     return render_template('entryform.html',entryform=entryform)

@@ -80,3 +80,15 @@ class Entry(Document):
     meta = {
         'ordering': ['-createdate']
     }
+
+class Advice(Document):
+    author = ReferenceField('User',reverse_delete_rule=CASCADE) 
+    content = StringField()
+    createdate = DateTimeField(default=dt.datetime.utcnow)
+    modifydate = DateTimeField()
+    advicetype = StringField()
+    image = FileField()
+
+    meta = {
+        'ordering': ['-createdate']
+    }

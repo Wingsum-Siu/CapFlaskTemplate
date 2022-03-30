@@ -43,3 +43,34 @@
     text-shadow: 1px 1px #5570bb;
 }
 
+.advicedata{
+    font-family: 'Roboto Mono', monospace;
+    text-shadow: 1px 1px #8398d3;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.advicetext{
+    font-family: 'Staatliches', cursive;
+    margin-left: 20px;
+    text-shadow: 1px 2px #8398d3;
+    font-size: 40px;
+}
+
+.advicebg{
+    background-color: whitesmoke;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#advicetoptext{
+    padding-top: 3px;
+}
+
+#cat{
+    margin-top: 120px;
+}
+
+#continue{
+    font-size: 28px;
+}

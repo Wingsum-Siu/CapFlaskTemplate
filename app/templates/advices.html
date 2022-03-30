@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-4">
+        <h1 class="header1">Advice Wall</h1>
+    </div>
+    <div class="col">
+        <a href="/advice/new" class="btn btn-primary btn-sm mt-5" role="button">New Advice Post</a>
+    </div>
+</div>
+
+{% if advices %}
+    {% for advice in advices %}
+        <!-- <div class="row border-bottom">
+            <div class="col-2">
+                {% if loop.index == 1 %}
+                <h3 class="display-5">Date</h3>
+                {% endif %}
+                <a href="/advice/{{advice.id}}">
+                    {{moment(advice.createdate).calendar()}}
+                </a>
+            </div>
+            <div class="col-2">
+                {% if loop.index == 1 %}
+                <h3 class="display-5">User</h3>
+                {% endif %}
+                {{advice.author.username}}
+            </div>
+            <div class="col">
+                {% if loop.index == 1 %}
+                    <h3 class="display-5">Advice Category</h3>
+                {% endif %}
+                {{advice.advicetype}}
+            </div>
+            <div class="col">
+                {% if loop.index == 1 %}
+                    <h3 class="display-5">Advice</h3>
+                {% endif %}
+                {{advice.content}}
+            </div>
+        </div> -->
+        <div class="advicebg">
+            <p class="advicedata" id="advicetoptext">Username: {{advice.author.username}}</p>
+            <a href="/advice/{{advice.id}}">
+                <p class="advicedata">Time Posted: {{moment(advice.createdate).calendar()}}</p> 
+            </a>
+            <p class="advicedata">Category: {{advice.advicetype}}</p>
+            <p class="advicetext">"{{advice.content}}"</p>
+        </div>
+    {% endfor %}
+{% else %}
+    <h1>No Advice :(</h1>
+{% endif %}
+
+{% endblock %}

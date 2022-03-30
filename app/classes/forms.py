@@ -75,3 +75,9 @@ class EntryForm(FlaskForm):
     adjective = StringField('Adjective (to describe yourself)', validators=[DataRequired()])
     entrycontent = TextAreaField('Entry', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+class AdviceForm(FlaskForm):
+    content = TextAreaField('Advice', validators=[DataRequired()])
+    image = FileField()
+    advicetype = SelectField('Which of the following best describes your advice?',choices=[("Tips","Tips"),("Motivational","Motivational"),("Other","Other")], validators=[DataRequired()])
+    submit = SubmitField('Post')

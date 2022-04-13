@@ -4,33 +4,35 @@
 
 {% if advice %}
 
-{{moment(advice.createdate).calendar()}} by {{advice.author.username}} 
+{{moment(advice.createdate).calendar()}} by {{advice.author.username}}
 {% if advice.modifydate %}
-    modified {{moment(advice.modifydate).calendar()}}
+modified {{moment(advice.modifydate).calendar()}}
 {% endif %}
 <br>
-    {% if advice.author == current_user %}
-        <a data-toggle="tooltip" data-placement="top" title="Delete Post" href="/advice/delete/{{advice.id}}">
-            <img width="40" class="bottom-image" src="/static/delete.png">
-        </a>
-        <a data-toggle="tooltip" data-placement="top" title="Edit Post" href="/advice/edit/{{advice.id}}">
-            <img width="40" class="bottom-image" src="/static/edit.png">
-        </a>
-    {% endif %}
-    
-    <h1 class="header1">Advice Post</h1>
-    <p class="fs-3 text-break">
-        {% if advice.author.image %}
-            <img width="120" class="img-thumbnail float-start me-2" src="data:image;base64,{{base64encode(advice.author.image.read())}}">
-        {% endif %}
-        <h4>Advice Category: {{advice.advicetype}}</h4>
-        
-        <br>
-        <h5>Advice Message: <br> {{advice.content}}</h5>
-    </p>
-
-{% else %}
-    <h1 class="display-5">No Post</h1>
+{% if advice.author == current_user %}
+<a data-toggle="tooltip" data-placement="top" title="Delete Post" href="/advice/delete/{{advice.id}}">
+    <img width="40" class="bottom-image" src="/static/delete.png">
+</a>
+<a data-toggle="tooltip" data-placement="top" title="Edit Post" href="/advice/edit/{{advice.id}}">
+    <img width="40" class="bottom-image" src="/static/edit.png">
+</a>
 {% endif %}
 
+<h1 class="header1">Advice Post</h1>
+<p class="fs-3 text-break">
+    {% if advice.author.image %}
+    <img width="120" class="img-thumbnail float-start me-2"
+        src="data:image;base64,{{base64encode(advice.author.image.read())}}">
+    {% endif %}
+<div class="advicecontent">
+    <p>Advice Category: <br> {{advice.advicetype}}</p>
+    <p>Advice Message: <br> {{advice.content}}</p>
+    <!-- {{advice.image}} -->
+</div>
+</p>
+
+{% else %}
+<h1 class="display-5">No Post</h1>
+{% endif %}
+<br><br><br>
 {% endblock %}

@@ -78,6 +78,6 @@ class EntryForm(FlaskForm):
 
 class AdviceForm(FlaskForm):
     content = TextAreaField('Advice', validators=[DataRequired()])
-    image = FileField()
+    image = FileField('Image')
     advicetype = SelectField('Which of the following best describes your advice?',choices=[("Tips","Tips"),("Motivational","Motivational"),("Other","Other")], validators=[DataRequired()])
     submit = SubmitField('Post')

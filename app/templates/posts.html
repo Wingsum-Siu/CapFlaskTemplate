@@ -12,38 +12,38 @@
 </div>
 
 {% if posts %}
-    {% for post in posts %}
-        <div class="row border-bottom">
-            <div class="col-2">
-                {% if loop.index == 1 %}
-                <h3 class="display-5">Date</h3>
-                {% endif %}
-                <a href="/post/{{post.id}}">
-                    {{moment(post.createdate).calendar()}}
-                </a>
-            </div>
-            <div class="col-2">
-                {% if loop.index == 1 %}
-                <h3 class="display-5">User</h3>
-                {% endif %}
-                {{post.author.username}}
-            </div>
-            <div class="col">
-                {% if loop.index == 1 %}
-                    <h3 class="display-5">User Feeling</h3>
-                {% endif %}
-                {{post.userfeeling}}
-            </div>
-            <div class="col">
-                {% if loop.index == 1 %}
-                    <h3 class="display-5">Subject</h3>
-                {% endif %}
-                {{post.subject}}
-            </div>
-        </div>
-    {% endfor %}
+{% for post in posts %}
+<div class="row border-bottom">
+    <div class="col-2">
+        {% if loop.index == 1 %}
+        <h3 class="display-5">Date</h3>
+        {% endif %}
+        <a href="/post/{{post.id}}">
+            {{moment(post.createdate).calendar()}}
+        </a>
+    </div>
+    <div class="col-2">
+        {% if loop.index == 1 %}
+        <h3 class="display-5">User</h3>
+        {% endif %}
+        {{post.author.username}}
+    </div>
+    <div class="col">
+        {% if loop.index == 1 %}
+        <h3 class="display-5">User Feeling</h3>
+        {% endif %}
+        {{post.userfeeling}}
+    </div>
+    <div class="col">
+        {% if loop.index == 1 %}
+        <h3 class="display-5">Subject</h3>
+        {% endif %}
+        {{post.subject}}
+    </div>
+</div>
+{% endfor %}
 {% else %}
-    <h1>No Posts</h1>
+<h1>No Posts</h1>
 {% endif %}
-
+<br><br><br>
 {% endblock %}

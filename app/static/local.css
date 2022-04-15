@@ -128,3 +128,12 @@
   .advicecontent{
       font-size: 20px;
   }
+
+  .advicedesc{
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #dde8fa;
+  }

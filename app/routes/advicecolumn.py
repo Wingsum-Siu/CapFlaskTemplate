@@ -75,9 +75,9 @@ def adviceNew():
             # This sets the modifydate to the current datetime.
             modifydate = dt.datetime.utcnow 
         )
-        # if form.image.data:
-        #     form.image.put(form.image.data, content_type = 'image/jpeg')
-        #     newAdvice.save()
+        if form.image.data:
+            form.image.put(form.image.data, content_type = 'image/jpeg')
+            newAdvice.save()
         # This is a method that saves the data to the mongoDB database.
         newAdvice.save()
 

@@ -18,8 +18,8 @@
 <br>
 
 {% if advices %}
-    {% for advice in advices %}
-        <!-- <div class="row border-bottom">
+{% for advice in advices %}
+<!-- <div class="row border-bottom">
             <div class="col-2">
                 {% if loop.index == 1 %}
                 <h3 class="display-5">Date</h3>
@@ -47,34 +47,54 @@
                 {{advice.content}}
             </div>
         </div> -->
-        <div class="advicebg">
-            {% if advice.colorbg == Red %}
-                <div class="advicered">
-                    <p>hi</p>
-            {% elif advice.colorbg == Orange %}
-                <div class="adviceorange">
-            {% endif %} 
+<div>
+    {% if advice.colorbg == "Red" %}
+    <div class="advicered advicebg">
+        {% elif advice.colorbg == "Orange" %}
+        <div class="adviceorange advicebg">
+            {% elif advice.colorbg == "Yellow" %}
+            <div class="adviceyellow advicebg">
+                {% elif advice.colorbg == "Green" %}
+                <div class="advicegreen advicebg">
+                    {% elif advice.colorbg == "Blue" %}
+                    <div class="adviceblue advicebg">
+                        {% elif advice.colorbg == "Purple" %}
+                        <div class="advicepurple advicebg">
+                            {% endif %}
 
-            <p class="fs-3 text-break advicebg">
-                {% if advice.author.image %}
-                <img width="50" class="img-thumbnail float-start me-2" id="picdown"
-                    src="data:image;base64,{{base64encode(advice.author.image.read())}}">
-                    {% else %}
-                    <img class="img-thumbnail" width = "100" src="/static/bdog.jpg">
-                {% endif %} 
-            </p>
-            <p class="advicedata" style="float: right;">Category: {{advice.advicetype}}</p>
-            <a href="/advice/{{advice.id}}">
-                <p class="advicedata" style="float: right;">Time Posted: {{moment(advice.createdate).calendar()}}</p> 
-            </a>
-            <p class="advicedata" id="advicetoptext">Username: {{advice.author.username}}</p>
-            <p class="advicetext">"{{advice.content}}"</p>
+                            <p class="fs-3 text-break advicebg">
+                                {% if advice.author.image %}
+                                <img width="50" class="img-thumbnail float-start me-2" id="picdown"
+                                    src="data:image;base64,{{base64encode(advice.author.image.read())}}">
+                                {% else %}
+                                <img class="img-thumbnail" width="100" src="/static/bdog.jpg">
+                                {% endif %}
+                            </p>
+                            <p class="advicedata" style="float: right;">Category: {{advice.advicetype}}</p>
+                            <a href="/advice/{{advice.id}}">
+                                <p class="advicedata" style="float: right;">Time Posted:
+                                    {{moment(advice.createdate).calendar()}}
+                                </p>
+                            </a>
+                            <p class="advicedata" id="advicetoptext">Username: {{advice.author.username}}</p>
+                            <p class="advicetext">"{{advice.content}}"</p>
+                            {% if advice.colorbg == "Red" %}
+                        </div>
+                        {% elif advice.colorbg == "Orange" %}
+                    </div>
+                    {% elif advice.colorbg == "Yellow" %}
+                </div>
+                {% elif advice.colorbg == "Green" %}
+            </div>
+            {% elif advice.colorbg == "Blue" %}
         </div>
-        </div>
+        {% elif advice.colorbg == "Purple" %}
     </div>
-    {% endfor %}
+    {% endif %}
+</div>
+{% endfor %}
 {% else %}
-    <h1>No Advice :(</h1>
+<h1>No Advice :(</h1>
 {% endif %}
 <br><br>
 {% endblock %}

@@ -1,26 +1,26 @@
-.bottom-image img{
-    vertical-align:bottom;
-    }
+.bottom-image img {
+    vertical-align: bottom;
+}
 
-.header1{
+.header1 {
     /* font-family: 'Roboto Mono', monospace; */
     font-family: 'Staatliches', cursive;
     color: black;
     /* background: rgb(104, 173, 170); */
     font-size: 80px;
     text-shadow: 3px 3px #8398d3;
-    
+
 }
 
-#movedown{
+#movedown {
     margin-top: 20px;
 }
 
-#center{
+#center {
     text-align: center;
 }
 
-#indextable{
+#indextable {
     background-color: rgb(234, 242, 253);
     margin-left: 10%;
     margin-right: 10%;
@@ -32,55 +32,55 @@
     text-shadow: 1px 1px #8398d3;
 }
 
-#profiledata{
+#profiledata {
     font-size: 25px;
 }
 
-.navbartext{
+.navbartext {
     font-family: 'Staatliches', cursive;
     color: black;
     font-size: 18px;
     text-shadow: 1px 1px #8398d3;
 }
 
-.advicedata{
+.advicedata {
     /* font-family: 'Roboto Mono', monospace; */
     text-shadow: 1px 1px #8398d3;
     font-size: 15px;
     padding-left: 10px;
 }
 
-.advicetext{
+.advicetext {
     font-family: 'Staatliches', cursive;
     margin-left: 20px;
     text-shadow: 1px 2px #8398d3;
     font-size: 40px;
 }
 
-.advicebg{
+.advicebg {
     margin-left: 20px;
     margin-right: 20px;
     padding-top: 3px;
     padding-right: 10px;
 }
 
-#advicetoptext{
+#advicetoptext {
     padding-top: 3px;
 }
 
-#cat{
+#cat {
     margin-top: 120px;
 }
 
-#continue{
+#continue {
     font-size: 28px;
 }
 
-.left{
+.left {
     text-align: left;
 }
 
-.footer{
+.footer {
     font-family: 'Staatliches', cursive;
     color: black;
     font-size: 18px;
@@ -90,97 +90,99 @@
 .service-icon {
     text-align: center;
     height: 176px;
-  }
-  
-  .service-icon img {
+}
+
+.service-icon img {
     display: inline-block;
     max-width: 180px;
     height: 176px;
     vertical-align: middle;
     padding: 20px 0;
-  }
-  
-  h3 {
+}
+
+h3 {
     font-size: 20px;
     margin: 35px 0 25px;
     font-weight: 800;
     color: #3d3d3d;
     text-transform: uppercase;
-  }
-  
-  .hoverServices:hover {
+}
+
+.hoverServices:hover {
     background-color: #f2f2f2;
-  }
-  
-  @media (min-width: 978px) {
+}
+
+@media (min-width: 978px) {
     .services-box {
-      margin-right: 0;
-      border: 1px solid #e5e5e5;
-      border-left: 0;
-      border-top: 0;
-      height: 515px;
+        margin-right: 0;
+        border: 1px solid #e5e5e5;
+        border-left: 0;
+        border-top: 0;
+        height: 515px;
     }
-  
+
     .services-box.last {
-      border-right: 0;
+        border-right: 0;
     }
-  }
+}
 
-  .advicecontent{
-      font-size: 20px;
-  }
+.advicecontent {
+    font-size: 20px;
+}
 
-  .advicedesc{
+.advicedesc {
     text-align: left;
     margin-left: 20px;
     margin-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #dde8fa;
-  }
+}
 
-.postdesign{
+.postdesign {
     background-color: #e7f0fc;
 }
 
-.commentinfo{
+.commentinfo {
     background-color: #e5e5e5;
 }
 
-.commentcontent{
+.commentcontent {
     background-color: #e5e5e5;
     padding-top: 5px;
 }
+
 /* advices profile picture */
-#picdown{
+#picdown {
     margin-top: 15px;
 }
+
 /* advice profile picture */
-#picdown2{
+#picdown2 {
     margin-top: 33px;
     margin-left: 30px;
 }
 
-.advicered{
-    background-color: red;
+.advicered {
+    background-color: rgb(226, 109, 109);
 }
 
-.adviceorange{
-    background-color: orange;
+.adviceorange {
+    background-color: rgb(250, 201, 110);
 }
 
-.adviceyellow{
-    background-color: yellow;
+.adviceyellow {
+    background-color: rgb(255, 234, 113);
 }
 
-.advicegreen{
-    background-color: green;
+.advicegreen {
+    background-color: rgb(124, 222, 124);
 }
 
-.adviceblue{
-    background-color: blue;
+.adviceblue {
+    background-color: rgb(142, 142, 216);
 }
 
-.advicepurple{
-    background-color: purple;
+.advicepurple {
+    background-color: rgb(174, 119, 174);
 }

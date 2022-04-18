@@ -44,7 +44,7 @@
 }
 
 .advicedata{
-    font-family: 'Roboto Mono', monospace;
+    /* font-family: 'Roboto Mono', monospace; */
     text-shadow: 1px 1px #8398d3;
     font-size: 15px;
     padding-left: 10px;
@@ -58,9 +58,10 @@
 }
 
 .advicebg{
-    background-color: whitesmoke;
     margin-left: 20px;
     margin-right: 20px;
+    padding-top: 3px;
+    padding-right: 10px;
 }
 
 #advicetoptext{
@@ -132,8 +133,54 @@
   .advicedesc{
     text-align: left;
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #dde8fa;
   }
+
+.postdesign{
+    background-color: #e7f0fc;
+}
+
+.commentinfo{
+    background-color: #e5e5e5;
+}
+
+.commentcontent{
+    background-color: #e5e5e5;
+    padding-top: 5px;
+}
+/* advices profile picture */
+#picdown{
+    margin-top: 15px;
+}
+/* advice profile picture */
+#picdown2{
+    margin-top: 33px;
+    margin-left: 30px;
+}
+
+.advicered{
+    background-color: red;
+}
+
+.adviceorange{
+    background-color: orange;
+}
+
+.adviceyellow{
+    background-color: yellow;
+}
+
+.advicegreen{
+    background-color: green;
+}
+
+.adviceblue{
+    background-color: blue;
+}
+
+.advicepurple{
+    background-color: purple;
+}

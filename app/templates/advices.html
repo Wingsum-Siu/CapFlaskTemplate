@@ -48,13 +48,30 @@
             </div>
         </div> -->
         <div class="advicebg">
-            <p class="advicedata" id="advicetoptext">Username: {{advice.author.username}}</p>
+            {% if advice.colorbg == Red %}
+                <div class="advicered">
+                    <p>hi</p>
+            {% elif advice.colorbg == Orange %}
+                <div class="adviceorange">
+            {% endif %} 
+
+            <p class="fs-3 text-break advicebg">
+                {% if advice.author.image %}
+                <img width="50" class="img-thumbnail float-start me-2" id="picdown"
+                    src="data:image;base64,{{base64encode(advice.author.image.read())}}">
+                    {% else %}
+                    <img class="img-thumbnail" width = "100" src="/static/bdog.jpg">
+                {% endif %} 
+            </p>
+            <p class="advicedata" style="float: right;">Category: {{advice.advicetype}}</p>
             <a href="/advice/{{advice.id}}">
-                <p class="advicedata">Time Posted: {{moment(advice.createdate).calendar()}}</p> 
+                <p class="advicedata" style="float: right;">Time Posted: {{moment(advice.createdate).calendar()}}</p> 
             </a>
-            <p class="advicedata">Category: {{advice.advicetype}}</p>
+            <p class="advicedata" id="advicetoptext">Username: {{advice.author.username}}</p>
             <p class="advicetext">"{{advice.content}}"</p>
         </div>
+        </div>
+    </div>
     {% endfor %}
 {% else %}
     <h1>No Advice :(</h1>

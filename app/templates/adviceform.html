@@ -21,10 +21,20 @@
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
     </p>
+    <!-- <p>
         {{ form.image() }}<br>
         {% for error in form.image.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
+    </p> -->
+    <p>
+        {{ form.colorbg.label }} <br>
+        {{ form.colorbg(size=1) }}
+        <!--List the errors for this field-->
+        {% for error in form.colorbg.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
     <p>
         {{form.submit()}}
     </p>

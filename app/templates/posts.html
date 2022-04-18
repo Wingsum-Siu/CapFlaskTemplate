@@ -13,7 +13,7 @@
 
 {% if posts %}
 {% for post in posts %}
-<div class="row border-bottom">
+<!-- <div class="row border-bottom">
     <div class="col-2">
         {% if loop.index == 1 %}
         <h3 class="display-5">Date</h3>
@@ -40,10 +40,42 @@
         {% endif %}
         {{post.subject}}
     </div>
+</div> -->
+<div>
+    <div class="modal-body row ">
+        <div class="col-md-4 postdesign">
+            <br>
+            {% if post.author.image %}
+                <img width="50" class="img-thumbnail float-start me-2"
+                src="data:image;base64,{{base64encode(post.author.image.read())}}">
+                {% else %}
+                <img class="img-thumbnail" width = "100" src="/static/bdog.jpg">
+            {% endif %}
+            <a href="/post/{{post.id}}">
+                Date Posted: {{moment(post.createdate).calendar()}}
+            </a>
+            <br>
+            Username: {{post.author.username}}
+            <br>
+            This user is feeling: {{post.userfeeling}}
+            <br> <br>
+        </div>
+        <div class="col-md-8 postdesign">
+            <br>
+            <div class="postsubject">
+                Subject: {{post.subject}}
+            </div>
+            <br>
+            <div class="postcontent">
+                {{post.content}}
+            </div>
+            <br>
+        </div>
+      </div>
 </div>
 {% endfor %}
 {% else %}
 <h1>No Posts</h1>
 {% endif %}
-<br><br><br>
+<br><br><br><br><br>
 {% endblock %}

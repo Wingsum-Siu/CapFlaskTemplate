@@ -88,6 +88,7 @@ class Advice(Document):
     modifydate = DateTimeField()
     advicetype = StringField()
     image = FileField()
+    colorbg = StringField()
 
     meta = {
         'ordering': ['-createdate']

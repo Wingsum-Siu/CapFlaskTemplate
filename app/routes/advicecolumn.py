@@ -71,13 +71,16 @@ def adviceNew():
             content = form.content.data,
             advicetype = form.advicetype.data,
             # image = form.image.data,
+            # im = form.image("image/jpeg"),
+            colorbg = form.colorbg.data,
             author = current_user.id,
             # This sets the modifydate to the current datetime.
             modifydate = dt.datetime.utcnow 
         )
-        if form.image.data:
-            form.image.put(form.image.data, content_type = 'image/jpeg')
-            newAdvice.save()
+
+        # if form.image.data:
+        #     form.image.put(form.image.data, content_type = 'image/jpeg')
+        #     newAdvice.save()
         # This is a method that saves the data to the mongoDB database.
         newAdvice.save()
 
@@ -119,6 +122,7 @@ def adviceEdit(adviceID):
             content = form.content.data,
             advicetype = form.advicetype.data,
             image = form.image.data,
+            colorbg= form.colorbg.data,
             modifydate = dt.datetime.utcnow
         )
         # After updating the document, send the user to the updated post using a redirect.
@@ -127,5 +131,5 @@ def adviceEdit(adviceID):
     form.content.data = editAdvice.content
     form.advicetype.data = editAdvice.advicetype
     form.image.data = editAdvice.image
-
+    form.colorbg.data= editAdvice.advicetype
     return render_template('adviceform.html',form=form)

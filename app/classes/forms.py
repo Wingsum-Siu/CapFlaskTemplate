@@ -80,4 +80,5 @@ class AdviceForm(FlaskForm):
     content = TextAreaField('Advice', validators=[DataRequired()])
     image = FileField('Image')
     advicetype = SelectField('Which of the following best describes your advice?',choices=[("Tips","Tips"),("Motivational","Motivational"),("Other","Other")], validators=[DataRequired()])
+    colorbg = SelectField('Background Color of Your Post',choices=[("Red","Red"),("Orange","Orange"),("Yellow","Yellow"),("Green","Green"),("Blue","Blue"),("Purple","Purple")])
     submit = SubmitField('Post')

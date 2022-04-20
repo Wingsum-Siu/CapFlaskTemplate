@@ -30,6 +30,14 @@
         {% endfor %}
     </p>
     <p>
+        {{ form.anonymous.label }} <br>
+        {{ form.anonymous(cols=64, rows=10) }}
+        <!--List the errors for this field-->
+        {% for error in form.anonymous.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
         {{form.submit()}}
     </p>
 </form>

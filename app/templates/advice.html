@@ -20,6 +20,8 @@ modified {{moment(advice.modifydate).calendar()}}
 {% endif %}
 <br><br>
 <h5>If you're the author, and you need to edit!</h5>
+<br>
+<h6>Current Post</h6>
 <p class="fs-3 text-break ">
     {% if advice.author.image %}
     <img width="50" class="img-thumbnail float-start me-2" id="picdown2"
@@ -28,17 +30,47 @@ modified {{moment(advice.modifydate).calendar()}}
         <img class="img-thumbnail" width = "100" src="/static/bdog.jpg">
     {% endif %} 
 </p>
-<div class="advicebg">
+
+<div class="">
+    {% if advice.colorbg == "Red" %}
+    <div class="advicered advicebg">
+        {% elif advice.colorbg == "Orange" %}
+        <div class="adviceorange advicebg">
+            {% elif advice.colorbg == "Yellow" %}
+            <div class="adviceyellow advicebg">
+                {% elif advice.colorbg == "Green" %}
+                <div class="advicegreen advicebg">
+                    {% elif advice.colorbg == "Blue" %}
+                    <div class="adviceblue advicebg">
+                        {% elif advice.colorbg == "Purple" %}
+                        <div class="advicepurple advicebg">
+                            {% endif %}
+                            <br>
+                            <p class="advicedata" style="float: right;">Category: {{advice.advicetype}}</p>
+                            <a href="/advice/{{advice.id}}">
+                                <p class="advicedata" style="float: right;">Time Posted:
+                                    {{moment(advice.createdate).calendar()}}
+                                </p>
+                            </a>
+                            <p class="advicedata" id="advicetoptext">Username: {{advice.author.username}}</p>
+                            <p class="advicetext">"{{advice.content}}"</p>
+                            {% if advice.colorbg == "Red" %}
+                        </div>
+                        {% elif advice.colorbg == "Orange" %}
+                    </div>
+                    {% elif advice.colorbg == "Yellow" %}
+                </div>
+                {% elif advice.colorbg == "Green" %}
+            </div>
+            {% elif advice.colorbg == "Blue" %}
+        </div>
+        {% elif advice.colorbg == "Purple" %}
+    </div>
+    {% endif %}
     <br>
-    <p class="advicedata" style="float: right;">Category: {{advice.advicetype}}</p>
-    <a href="/advice/{{advice.id}}">
-        <p class="advicedata" >Time Posted: {{moment(advice.createdate).calendar()}}</p> 
-    </a>
-    <p class="advicedata" id="advicetoptext">Username: {{advice.author.username}}</p>
-    <p class="advicetext">"{{advice.content}}"</p>
 </div>
 {% else %}
 <h1 class="display-5">No Post</h1>
 {% endif %}
-<br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock %}

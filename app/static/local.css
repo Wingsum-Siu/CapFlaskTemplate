@@ -33,7 +33,7 @@
 }
 
 #profiledata {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .navbartext {
@@ -60,16 +60,13 @@
 .advicebg {
     margin-left: 20px;
     margin-right: 20px;
-    padding-top: 3px;
-    padding-right: 10px;
+    padding-top: 5px;
+    padding-right: 20px;
+    /* padding-left: 20px; */
 }
 
 #advicetoptext {
     padding-top: 3px;
-}
-
-#cat {
-    margin-top: 120px;
 }
 
 #continue {
@@ -85,6 +82,7 @@
     color: black;
     font-size: 18px;
     text-shadow: 1px 1px #5570bb;
+    margin-top: auto;
 }
 
 .service-icon {
@@ -140,7 +138,7 @@ h3 {
 }
 
 .postdesign {
-    background-color: #e7f0fc;
+    background-color: #e2e2e2;
 }
 
 .commentinfo {
@@ -155,6 +153,7 @@ h3 {
 /* advices profile picture */
 #picdown {
     margin-top: 15px;
+    margin-left: -10px;
 }
 
 /* advice profile picture */
@@ -164,25 +163,39 @@ h3 {
 }
 
 .advicered {
-    background-color: rgb(226, 109, 109);
+    background-color: rgb(255, 185, 185);
 }
 
 .adviceorange {
-    background-color: rgb(250, 201, 110);
+    background-color: rgb(253, 227, 177);
 }
 
 .adviceyellow {
-    background-color: rgb(255, 234, 113);
+    background-color: rgb(255, 245, 187);
 }
 
 .advicegreen {
-    background-color: rgb(124, 222, 124);
+    background-color: rgb(206, 255, 206);
 }
 
 .adviceblue {
-    background-color: rgb(142, 142, 216);
+    background-color: rgb(204, 217, 253);
 }
 
 .advicepurple {
-    background-color: rgb(174, 119, 174);
+    background-color: rgb(240, 217, 255);
+}
+/* for advice page (three cells in each row, but erratic formatting) */
+.item {
+    display: inline-block;
+    /* width: 33.33%; */
+    /* float: left; */
+    /* word-spacing: -3px; */
+    padding-top: 10px;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }

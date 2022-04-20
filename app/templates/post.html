@@ -9,6 +9,9 @@
 modified {{moment(post.modifydate).calendar()}}
 {% endif %}
 <br>
+<!-- <a href="/post/list" role="button">
+    <img src="/static/back.png" alt="">
+</a> -->
 <a href="/post/list" class="btn btn-primary btn-sm" role="button">Back</a>
 {% if post.author == current_user %}
 <a data-toggle="tooltip" data-placement="top" title="Delete Post" href="/post/delete/{{post.id}}">
@@ -31,7 +34,7 @@ modified {{moment(post.modifydate).calendar()}}
     <p>Post Message: <br> {{post.content}}</p>
 </div>
 </p> -->
-<h5>Post</h5>
+<!-- <h5>Post</h5> -->
 <div class="modal-body row">
     <div class="col-md-3 postdesign">
         <br>
@@ -43,7 +46,11 @@ modified {{moment(post.modifydate).calendar()}}
             Date Posted: {{moment(post.createdate).calendar()}}
         </a>
         <br>
-        Username: {{post.author.username}}
+        {% if post.anonymous == "Anonymous"%}
+                Anonymous
+            {% else %}
+                Username: {{post.author.username}}
+            {% endif%}
         <br>
         This user is feeling: {{post.userfeeling}}
         <br> <br>

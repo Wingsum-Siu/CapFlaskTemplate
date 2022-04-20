@@ -52,6 +52,7 @@ class Post(Document):
     createdate = DateTimeField(default=dt.datetime.utcnow)
     modifydate = DateTimeField()
     userfeeling = StringField()
+    anonymous = StringField()
 
     meta = {
         'ordering': ['-createdate']

@@ -55,7 +55,11 @@
                 Date Posted: {{moment(post.createdate).calendar()}}
             </a>
             <br>
-            Username: {{post.author.username}}
+            {% if post.anonymous == "Anonymous" %}
+                Anonymous
+            {% else %}
+                Username: {{post.author.username}}
+            {% endif %}
             <br>
             This user is feeling: {{post.userfeeling}}
             <br> <br>

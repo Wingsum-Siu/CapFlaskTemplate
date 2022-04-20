@@ -47,7 +47,7 @@
                 {{advice.content}}
             </div>
         </div> -->
-<div>
+<div class="item">
     {% if advice.colorbg == "Red" %}
     <div class="advicered advicebg">
         {% elif advice.colorbg == "Orange" %}
@@ -62,21 +62,22 @@
                         <div class="advicepurple advicebg">
                             {% endif %}
 
-                            <p class="fs-3 text-break advicebg">
+                            <!-- <p class="fs-3 text-break advicebg">
                                 {% if advice.author.image %}
                                 <img width="50" class="img-thumbnail float-start me-2" id="picdown"
                                     src="data:image;base64,{{base64encode(advice.author.image.read())}}">
                                 {% else %}
                                 <img class="img-thumbnail" width="100" src="/static/bdog.jpg">
                                 {% endif %}
-                            </p>
-                            <p class="advicedata" style="float: right;">Category: {{advice.advicetype}}</p>
+                            </p> -->
                             <a href="/advice/{{advice.id}}">
-                                <p class="advicedata" style="float: right;">Time Posted:
+                                <p class="advicedata">Time Posted:
                                     {{moment(advice.createdate).calendar()}}
                                 </p>
                             </a>
-                            <p class="advicedata" id="advicetoptext">Username: {{advice.author.username}}</p>
+                            <!-- <p class="advicedata" id="advicetoptext">Username: {{advice.author.username}}</p> -->
+                            <p class="advicedata">Category: {{advice.advicetype}}</p>
+                            
                             <p class="advicetext">"{{advice.content}}"</p>
                             {% if advice.colorbg == "Red" %}
                         </div>
@@ -92,6 +93,7 @@
     </div>
     {% endif %}
 </div>
+
 {% endfor %}
 {% else %}
 <h1>No Advice :(</h1>

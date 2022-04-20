@@ -97,6 +97,7 @@ def postNew():
             subject = form.subject.data,
             content = form.content.data,
             userfeeling = form.userfeeling.data,
+            anonymous = form.anonymous.data,
             author = current_user.id,
             # This sets the modifydate to the current datetime.
             modifydate = dt.datetime.utcnow 
@@ -142,6 +143,7 @@ def postEdit(postID):
             subject = form.subject.data,
             content = form.content.data,
             userfeeling = form.userfeeling.data,
+            anonymous = form.anonymous.data,
             modifydate = dt.datetime.utcnow
         )
         # After updating the document, send the user to the updated post using a redirect.
@@ -152,6 +154,7 @@ def postEdit(postID):
     form.subject.data = editPost.subject
     form.content.data = editPost.content
     form.userfeeling.data = editPost.userfeeling
+    form.anonymous.data = editPost.anonymous
 
     # Send the user to the post form that is now filled out with the current information
     # from the form.

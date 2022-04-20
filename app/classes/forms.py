@@ -65,6 +65,7 @@ class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
     content = TextAreaField('Post', validators=[DataRequired()])
     userfeeling = SelectField('How are you feeling today?',choices=[("Great","Great"),("Alright","Alright"),("A little down","A little down"),("Sad","Sad"),("Angry","Angry"),("Excited","Excited")])
+    anonymous = SelectField('Name on Post?',choices=[("Username","Username"),("Anonymous","Anonymous")])
     submit = SubmitField('Post')
 
 class CommentForm(FlaskForm):

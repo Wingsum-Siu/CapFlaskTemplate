@@ -1,55 +1,43 @@
 {% extends 'base.html' %}
 
 {% block body %}
-
+<div class="modal-body row">
+    <div class="col-md-6">
+        <img src="/static/forum.jpg" width="470px" alt="">
+    </div>
+    <div class="col-md-6">
+        <br><br><br><br>
+        <h1 class="header1">Forum</h1>
+        <div class="">
+            <li>Welcome to the Forum!</li>
+            <li>Post anything you'd like (reasonably, of course!), from experiences to questions.</li>
+            <li>Maybe you'll get a response!</li>
+        </div>
+        <a href="/post/new" class="btn btn-primary btn-sm mt-5" role="button">Got a Post?</a>
+    </div>
+  </div>
+<hr><hr>
 <div class="row">
     <div class="col-4">
         <h1 class="header1">All Posts</h1>
-    </div>
-    <div class="col">
-        <a href="/post/new" class="btn btn-primary btn-sm mt-5" role="button">New Post</a>
     </div>
 </div>
 
 {% if posts %}
 {% for post in posts %}
-<!-- <div class="row border-bottom">
-    <div class="col-2">
-        {% if loop.index == 1 %}
-        <h3 class="display-5">Date</h3>
-        {% endif %}
-        <a href="/post/{{post.id}}">
-            {{moment(post.createdate).calendar()}}
-        </a>
-    </div>
-    <div class="col-2">
-        {% if loop.index == 1 %}
-        <h3 class="display-5">User</h3>
-        {% endif %}
-        {{post.author.username}}
-    </div>
-    <div class="col">
-        {% if loop.index == 1 %}
-        <h3 class="display-5">Feeling...</h3>
-        {% endif %}
-        {{post.userfeeling}}
-    </div>
-    <div class="col">
-        {% if loop.index == 1 %}
-        <h3 class="display-5">Subject</h3>
-        {% endif %}
-        {{post.subject}}
-    </div>
-</div> -->
 <div>
     <div class="modal-body row ">
         <div class="col-md-4 postdesign">
             <br>
             {% if post.author.image %}
-                <img width="50" class="img-thumbnail float-start me-2"
-                src="data:image;base64,{{base64encode(post.author.image.read())}}">
+            {% if post.anonymous == "Anonymous" %}
+            <img class="img-thumbnail float-start me-2" width = "50" src="/static/amongus.png">
+            {% else %}
+            <img width="50" class="img-thumbnail float-start me-2"
+            src="data:image;base64,{{base64encode(post.author.image.read())}}">
+            {% endif %}
                 {% else %}
-                <img class="img-thumbnail" width = "100" src="/static/bdog.jpg">
+                <img class="img-thumbnail float-start me-2" width = "50" src="/static/bdog.jpg">
             {% endif %}
             <a href="/post/{{post.id}}">
                 Date Posted: {{moment(post.createdate).calendar()}}

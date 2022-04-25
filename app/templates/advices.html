@@ -1,22 +1,30 @@
 {% extends 'base.html' %}
 
 {% block body %}
-
+<div class="modal-body row">
+    <div class="col-md-6">
+        <br><br>
+        <img src="/static/AdobeStock_100415353-thumb.jpg" width="500px" alt="">
+        <br><br>
+    </div>
+    <div class="col-md-6">
+        <br><br><br><br>
+        <h1 class="header1">Advice Wall</h1>
+        <div class="">
+            <li>Welcome to the Advice Wall!</li>
+            <li>Find motivitational messages and discover tips from other users!</li>
+            <li>To contributors, thank you~!</li>
+        </div>
+        <a href="/advice/new" class="btn btn-primary btn-sm mt-5" role="button">Got a Post?</a>
+        <br><br>
+    </div>
+  </div>
+<hr><hr>
 <div class="row">
     <div class="col-4">
-        <h1 class="header1">Advice Wall</h1>
-    </div>
-    <div class="col">
-        <a href="/advice/new" class="btn btn-primary btn-sm mt-5" role="button">New Advice Post</a>
-    </div>
-    <div class="advicedesc">
-        <li>Welcome to the Advice Wall!</li>
-        <li>Find motivitational messages and discover tips from other users!</li>
-        <li>To contributors, thank you~!</li>
+        <h1 class="header1">All Advice</h1>
     </div>
 </div>
-<br>
-
 {% if advices %}
 {% for advice in advices %}
 <!-- <div class="row border-bottom">

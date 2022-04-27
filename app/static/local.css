@@ -54,7 +54,7 @@
     font-family: 'Staatliches', cursive;
     margin-left: 20px;
     text-shadow: 1px 2px #8398d3;
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .advicebg {
@@ -198,4 +198,8 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.textindent1 {
+    margin-left: 10px;
 }

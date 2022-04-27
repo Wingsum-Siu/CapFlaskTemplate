@@ -1,33 +1,35 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<div class="modal-body row">
-    <div class="col-md-6">
-        <br><br>
-        <img src="/static/AdobeStock_100415353-thumb.jpg" width="500px" alt="">
-        <br><br>
-    </div>
-    <div class="col-md-6">
-        <br><br><br><br>
-        <h1 class="header1">Advice Wall</h1>
-        <div class="">
-            <li>Welcome to the Advice Wall!</li>
-            <li>Find motivitational messages and discover tips from other users!</li>
-            <li>To contributors, thank you~!</li>
+<div>
+    <div class="modal-body row">
+        <div class="col-md-6">
+            <br><br>
+            <img src="/static/AdobeStock_100415353-thumb.jpg" width="500px" alt="">
+            <br><br>
         </div>
-        <a href="/advice/new" class="btn btn-primary btn-sm mt-5" role="button">Got a Post?</a>
-        <br><br>
+        <div class="col-md-6">
+            <br><br><br><br>
+            <h1 class="header1">Advice Wall</h1>
+            <div class="">
+                <li>Welcome to the Advice Wall!</li>
+                <li>Find motivitational messages and discover tips from other users!</li>
+                <li>To contributors, thank you~!</li>
+            </div>
+            <a href="/advice/new" class="btn btn-primary btn-sm mt-5" role="button">Got a Post?</a>
+            <br><br>
+        </div>
     </div>
-  </div>
-<hr><hr>
-<div class="row">
-    <div class="col-4">
-        <h1 class="header1">All Advice</h1>
+    <hr>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <h1 class="header1">All Advice</h1>
+        </div>
     </div>
-</div>
-{% if advices %}
-{% for advice in advices %}
-<!-- <div class="row border-bottom">
+    {% if advices %}
+    {% for advice in advices %}
+    <!-- <div class="row border-bottom">
             <div class="col-2">
                 {% if loop.index == 1 %}
                 <h3 class="display-5">Date</h3>
@@ -55,22 +57,22 @@
                 {{advice.content}}
             </div>
         </div> -->
-<div class="item">
-    {% if advice.colorbg == "Red" %}
-    <div class="advicered advicebg">
-        {% elif advice.colorbg == "Orange" %}
-        <div class="adviceorange advicebg">
-            {% elif advice.colorbg == "Yellow" %}
-            <div class="adviceyellow advicebg">
-                {% elif advice.colorbg == "Green" %}
-                <div class="advicegreen advicebg">
-                    {% elif advice.colorbg == "Blue" %}
-                    <div class="adviceblue advicebg">
-                        {% elif advice.colorbg == "Purple" %}
-                        <div class="advicepurple advicebg">
-                            {% endif %}
+    <div class="item">
+        {% if advice.colorbg == "Red" %}
+        <div class="advicered advicebg">
+            {% elif advice.colorbg == "Orange" %}
+            <div class="adviceorange advicebg">
+                {% elif advice.colorbg == "Yellow" %}
+                <div class="adviceyellow advicebg">
+                    {% elif advice.colorbg == "Green" %}
+                    <div class="advicegreen advicebg">
+                        {% elif advice.colorbg == "Blue" %}
+                        <div class="adviceblue advicebg">
+                            {% elif advice.colorbg == "Purple" %}
+                            <div class="advicepurple advicebg">
+                                {% endif %}
 
-                            <!-- <p class="fs-3 text-break advicebg">
+                                <!-- <p class="fs-3 text-break advicebg">
                                 {% if advice.author.image %}
                                 <img width="50" class="img-thumbnail float-start me-2" id="picdown"
                                     src="data:image;base64,{{base64encode(advice.author.image.read())}}">
@@ -78,33 +80,33 @@
                                 <img class="img-thumbnail" width="100" src="/static/bdog.jpg">
                                 {% endif %}
                             </p> -->
-                            <a href="/advice/{{advice.id}}">
-                                <p class="advicedata">Time Posted:
-                                    {{moment(advice.createdate).calendar()}}
-                                </p>
-                            </a>
-                            <!-- <p class="advicedata" id="advicetoptext">Username: {{advice.author.username}}</p> -->
-                            <p class="advicedata">Category: {{advice.advicetype}}</p>
-                            
-                            <p class="advicetext">"{{advice.content}}"</p>
-                            {% if advice.colorbg == "Red" %}
+                                <a href="/advice/{{advice.id}}">
+                                    <p class="advicedata">Time Posted:
+                                        {{moment(advice.createdate).calendar()}}
+                                    </p>
+                                </a>
+                                <!-- <p class="advicedata" id="advicetoptext">Username: {{advice.author.username}}</p> -->
+                                <p class="advicedata">Category: {{advice.advicetype}}</p>
+
+                                <p class="advicetext">"{{advice.content}}"</p>
+                                {% if advice.colorbg == "Red" %}
+                            </div>
+                            {% elif advice.colorbg == "Orange" %}
                         </div>
-                        {% elif advice.colorbg == "Orange" %}
+                        {% elif advice.colorbg == "Yellow" %}
                     </div>
-                    {% elif advice.colorbg == "Yellow" %}
+                    {% elif advice.colorbg == "Green" %}
                 </div>
-                {% elif advice.colorbg == "Green" %}
+                {% elif advice.colorbg == "Blue" %}
             </div>
-            {% elif advice.colorbg == "Blue" %}
+            {% elif advice.colorbg == "Purple" %}
         </div>
-        {% elif advice.colorbg == "Purple" %}
+        {% endif %}
     </div>
+    {% endfor %}
+    {% else %}
+    <h1>No Advice :(</h1>
     {% endif %}
 </div>
-
-{% endfor %}
-{% else %}
-<h1>No Advice :(</h1>
-{% endif %}
 <br><br>
 {% endblock %}

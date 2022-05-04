@@ -45,7 +45,6 @@ modified {{moment(advice.modifydate).calendar()}}
                         {% elif advice.colorbg == "Purple" %}
                         <div class="advicepurple advicebg">
                             {% endif %}
-                            <br>
                             <p class="advicedata" style="float: right;">Category: {{advice.advicetype}}</p>
                             <a href="/advice/{{advice.id}}">
                                 <p class="advicedata" style="float: right;">Time Posted:
@@ -72,5 +71,5 @@ modified {{moment(advice.modifydate).calendar()}}
 {% else %}
 <h1 class="display-5">No Post</h1>
 {% endif %}
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 {% endblock %}
